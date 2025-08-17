@@ -13,7 +13,7 @@ const app = express();
 // Configure CORS for production and development
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://your-render-frontend-url.onrender.com' // Replace with your actual frontend URL
+  'https://datingapp-frontend.onrender.com/' // Replace with your actual frontend URL
 ];
 
 app.use(cors({
