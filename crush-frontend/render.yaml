@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: dating-app-frontend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: serve -s build
+    envVars:
+      - key: REACT_APP_API_BASE_URL
+        value: https://your-backend-service.onrender.com

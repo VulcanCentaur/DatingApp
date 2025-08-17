@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: crush-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://shinusrivastava:clBJHm7XNRmddWsu@cluster0.yqeu1yy.mongodb.net/crushDB?retryWrites=true&w=majority
+      - key: JWT_SECRET
+        value: 3a7f5b9e2c8d1f6a0b4e7c9d2f5a8b3e6c1d0f9a2b4e7c8d5f6a0b3e9c2d8f1a7b6e4c3d0f9a2b5e8c1d7f6a3b0e9c4d2f8a1b7e6c5d3f0a9b2e8c7d1
+      - key: PORT
+        value: 8080
+      - key: CORS_ORIGIN
+        value: https://your-frontend-url.onrender.com
