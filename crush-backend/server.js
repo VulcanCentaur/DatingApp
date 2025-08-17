@@ -200,15 +200,6 @@ app.get("/api/matches/:userId", async (req, res) => {
   }
 });
 
-// Serve frontend in production
-if (NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client', 'build')));
-  
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
-
 // Error handling
 app.use((err, req, res, next) => {
   console.error(err.stack);
