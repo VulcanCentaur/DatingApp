@@ -14,7 +14,7 @@ function App() {
   // Fetch crushes when logged in
   useEffect(() => {
     if (!token || !userId) return;
-    fetch(`https://datingapp-backend-jg0x.onrender.com/api/crush/${userId}`, {
+    fetch(`http://127.0.0.1:8080/api/crush/${userId}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -22,10 +22,10 @@ function App() {
       .catch(console.error);
   }, [token, userId]);
 
-  // Fetch matche
+  // Fetch matches
   const fetchMatches = () => {
     if (!token || !userId) return;
-    fetch(`https://datingapp-backend-jg0x.onrender.com/api/matches/${userId}`, {
+    fetch(`http://127.0.0.1:8080/api/matches/${userId}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -41,7 +41,7 @@ function App() {
 
   // Add crush
   const addCrush = async () => {
-    const res = await fetch("https://datingapp-backend-jg0x.onrender.com/api/crush", {
+    const res = await fetch("http://127.0.0.1:8080/api/crush", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +56,7 @@ function App() {
 
   // Signup
   const signup = async () => {
-    const res = await fetch("https://datingapp-backend-jg0x.onrender.com/api/register", {
+    const res = await fetch("http://127.0.0.1:8080/api/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -72,7 +72,7 @@ function App() {
 
   // Login - Updated to handle userId
   const login = async () => {
-    const res = await fetch("https://datingapp-backend-jg0x.onrender.com/api/login", {
+    const res = await fetch("http://127.0.0.1:8080/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -90,7 +90,7 @@ function App() {
 
   // Logout
   const logout = async () => {
-    await fetch("https://datingapp-backend-jg0x.onrender.com/api/logout", {
+    await fetch("http://127.0.0.1:8080/api/logout", {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
     });
